@@ -15,7 +15,8 @@
     "require": {
         "php": ">=5.3.0"
     },
-    "psr-4" : {
-        "psr-4": {"flbtaobaosdk\\": "src/"}
+    "autoload": {
+        "psr-4": {"flbtaobaosdk\\": "src/"},
+        "files": ["src/TopSdk.php"]
     }
 }
