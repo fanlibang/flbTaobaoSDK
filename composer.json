@@ -1,14 +1,17 @@
 {
     "name": "flbtaobaosdk/fanlibang",
     "description": "淘宝官方SDK",
+    "keywords": ["flbtaobaosdk"],
     "license": "MIT",
+    "require-dev": {
+    },
     "authors": [
         {
             "name": "fanlibang",
             "email": "wuxian@fanlibang.com"
         }
     ],
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "require": {
         "php": ">=5.3.0"
     },
