@@ -10,36 +10,36 @@ class NTbkShop
 	/** 
 	 * 淘客地址
 	 **/
-	public $clickUrl;
+	public $click_url;
 	
 	/** 
 	 * 店标图片
 	 **/
-	public $pictUrl;
+	public $pict_url;
 	
 	/** 
 	 * 卖家昵称
 	 **/
-	public $sellerNick;
+	public $seller_nick;
 	
 	/** 
 	 * 店铺名称
 	 **/
-	public $shopTitle;
+	public $shop_title;
 	
 	/** 
 	 * 店铺类型，B：天猫，C：淘宝
 	 **/
-	public $shopType;
+	public $shop_type;
 	
 	/** 
 	 * 店铺地址
 	 **/
-	public $shopUrl;
+	public $shop_url;
 	
 	/** 
 	 * 卖家ID
 	 **/
-	public $userId;	
+	public $user_id;	
 }
 ?>

@@ -3,7 +3,7 @@
  * TOP API: taobao.tbk.item.get request
  * 
  * @author auto create
- * @since 1.0, 2015.05.06
+ * @since 1.0, 2016.01.06
  */
 class TbkItemGetRequest
 {
@@ -18,7 +18,7 @@ class TbkItemGetRequest
 	private $endPrice;
 	
 	/** 
-	 * 淘客佣金比率上限，如：1234表示12.34%
+	 * 淘客佣金比率下限，如：1234表示12.34%
 	 **/
 	private $endTkRate;
 	

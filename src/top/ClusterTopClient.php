@@ -34,10 +34,10 @@ class ClusterTopClient extends TopClient {
 	public function execute($request = null, $session = null,$bestUrl = null){
 		$currentDate = date('U');
 		$syncDuration = $this->getDnsConfigSyncDuration();
-		$bestUrl = $this->getBestVipUrl($this->gatewayUrl,$request->getApiMethodName());
+		$bestUrl = $this->getBestVipUrl($this->gatewayUrl,$request->getApiMethodName(),$session);
 		if($currentDate - ClusterTopClient::$syncDate > $syncDuration * 60){
 			$httpdns = new HttpdnsGetRequest;
-			ClusterTopClient::$dnsconfig = json_decode(parent::execute($httpdns,null,$bestUrl)->result);
+			ClusterTopClient::$dnsconfig = json_decode(parent::execute($httpdns,null,$bestUrl)->result,true);
 			$syncDate = date('U');
 			ClusterTopClient::$syncDate = $syncDate ;
 		}
@@ -63,6 +63,11 @@ class ClusterTopClient extends TopClient {
 	}
 
 	private function getBestVipUrl($url,$apiname = null,$session = null){
+		$config = ClusterTopClient::$dnsconfig['config'];
+		$degrade = $config['degrade'];
+		if(strcmp($degrade,'true') == 0){
+			return $url;
+		}		
 		$currentEnv = $this->getEnvByApiName($apiname,$session);
 		$vip = $this->getVipByEnv($url,$currentEnv);
 		if($vip)
@@ -74,6 +79,9 @@ class ClusterTopClient extends TopClient {
 		$urlSchema = parse_url($comUrl);
 		if(!$urlSchema)
 			return null;
+		if(!ClusterTopClient::$dnsconfig['env'])
+			return null;
+		
 		if(!array_key_exists($currentEnv,ClusterTopClient::$dnsconfig['env']))
 			return null;
 
@@ -98,12 +106,12 @@ class ClusterTopClient extends TopClient {
 
 	private function getEnvByApiName($apiName,$session=""){
 		$apiCfgArray = ClusterTopClient::$dnsconfig['api'];
-		if($apiCfgArray){
-			$apiCfg = $apiCfgArray[$apiName];
-			if($apiCfg){
+		if($apiCfgArray){	
+			if(array_key_exists($apiName,$apiCfgArray)){
+				$apiCfg = $apiCfgArray[$apiName];
 				$userFlag = $apiCfg['user'];
 				$flag = $this->getUserFlag($session);
-				if($userFlag && $this->getUserFlag($session)){
+				if($userFlag && $flag ){
 					return $this->getEnvBySessionFlag($userFlag,$flag);
 				}else{
 					return $this->getRandomWeightElement($apiCfg['rule']);
@@ -125,11 +133,16 @@ class ClusterTopClient extends TopClient {
 	}
 
 	private function getEnvBySessionFlag($targetConfig,$flag){
-		if($flag)
+		if($flag){
+			$userConf = ClusterTopClient::$dnsconfig['user'];
+			$cfgArry = $userConf[$targetConfig];
+			foreach ($cfgArry as $key => $value) {
+				if(in_array($flag,$value))
+					return $key;
+			}
+		}else{
 			return null;
-		$userArry = $this->dnsconfig['user'];
-		$cfgArry = $userConf[$targetConfig];
-		var_dump($cfgArry);
+		}
 	}
 
 	private function getRandomWeightElement($elements){

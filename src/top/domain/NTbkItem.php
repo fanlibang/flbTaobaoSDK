@@ -10,22 +10,27 @@ class NTbkItem
 	/** 
 	 * 淘客地址
 	 **/
-	public $clickUrl;
+	public $click_url;
 	
 	/** 
 	 * 商品地址
 	 **/
-	public $itemUrl;
+	public $item_url;
+	
+	/** 
+	 * 卖家昵称
+	 **/
+	public $nick;
 	
 	/** 
 	 * 商品ID
 	 **/
-	public $numIid;
+	public $num_iid;
 	
 	/** 
 	 * 商品主图
 	 **/
-	public $pictUrl;
+	public $pict_url;
 	
 	/** 
 	 * 宝贝所在地
@@ -35,12 +40,17 @@ class NTbkItem
 	/** 
 	 * 商品一口价格
 	 **/
-	public $reservePrice;
+	public $reserve_price;
+	
+	/** 
+	 * 卖家id
+	 **/
+	public $seller_id;
 	
 	/** 
 	 * 商品小图列表
 	 **/
-	public $smallImages;
+	public $small_images;
 	
 	/** 
 	 * 商品标题
@@ -50,11 +60,16 @@ class NTbkItem
 	/** 
 	 * 卖家类型，0表示集市，1表示商城
 	 **/
-	public $userType;
+	public $user_type;
+	
+	/** 
+	 * 30天销量
+	 **/
+	public $volume;
 	
 	/** 
 	 * 商品折扣价格
 	 **/
-	public $zkFinalPrice;	
+	public $zk_final_price;	
 }
 ?>

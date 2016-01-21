@@ -10,17 +10,17 @@ class TbkItem
 	/** 
 	 * 推广点击url
 	 **/
-	public $clickUrl;
+	public $click_url;
 	
 	/** 
 	 * 商品的折扣价
 	 **/
-	public $discountPrice;
+	public $discount_price;
 	
 	/** 
 	 * 商品url
 	 **/
-	public $itemUrl;
+	public $item_url;
 	
 	/** 
 	 * 卖家昵称
@@ -30,12 +30,12 @@ class TbkItem
 	/** 
 	 * 淘宝客商品数字id
 	 **/
-	public $numIid;
+	public $num_iid;
 	
 	/** 
 	 * 图片url
 	 **/
-	public $picUrl;
+	public $pic_url;
 	
 	/** 
 	 * 商品价格
@@ -45,12 +45,12 @@ class TbkItem
 	/** 
 	 * 卖家id
 	 **/
-	public $sellerId;
+	public $seller_id;
 	
 	/** 
 	 * 店铺url
 	 **/
-	public $shopUrl;
+	public $shop_url;
 	
 	/** 
 	 * 商品title 宝贝名称

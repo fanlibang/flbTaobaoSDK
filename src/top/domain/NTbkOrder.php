@@ -15,37 +15,37 @@ class NTbkOrder
 	/** 
 	 * 推广者获得的佣金比例
 	 **/
-	public $commissionRate;
+	public $commission_rate;
 	
 	/** 
 	 * 淘客订单创建时间
 	 **/
-	public $createTime;
+	public $create_time;
 	
 	/** 
 	 * 淘客订单结算时间
 	 **/
-	public $earningTime;
+	public $earning_time;
 	
 	/** 
 	 * 商品数量
 	 **/
-	public $itemNum;
+	public $item_num;
 	
 	/** 
 	 * 商品标题
 	 **/
-	public $itemTitle;
+	public $item_title;
 	
 	/** 
 	 * 商品ID
 	 **/
-	public $numIid;
+	public $num_iid;
 	
 	/** 
 	 * 实际支付金额
 	 **/
-	public $payPrice;
+	public $pay_price;
 	
 	/** 
 	 * 单价
@@ -55,22 +55,22 @@ class NTbkOrder
 	/** 
 	 * 卖家昵称
 	 **/
-	public $sellerNick;
+	public $seller_nick;
 	
 	/** 
 	 * 卖家店铺名称
 	 **/
-	public $sellerShopTitle;
+	public $seller_shop_title;
 	
 	/** 
 	 * 淘宝订单号
 	 **/
-	public $tradeId;
+	public $trade_id;
 	
 	/** 
 	 * 淘宝父订单号
 	 **/
-	public $tradeParentId;
+	public $trade_parent_id;
 	
 	/** 
 	 * 推广者unid

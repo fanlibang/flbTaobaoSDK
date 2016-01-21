@@ -10,17 +10,17 @@ class TaobaokePayment
 	/** 
 	 * 应用授权码
 	 **/
-	public $appKey;
+	public $app_key;
 	
 	/** 
 	 * 所购买商品的类目ID
 	 **/
-	public $categoryId;
+	public $category_id;
 	
 	/** 
 	 * 所购买商品的类目名称
 	 **/
-	public $categoryName;
+	public $category_name;
 	
 	/** 
 	 * 用户获得的佣金
@@ -30,66 +30,66 @@ class TaobaokePayment
 	/** 
 	 * 佣金比率。比如：0.01代表1%
 	 **/
-	public $commissionRate;
+	public $commission_rate;
 	
 	/** 
 	 * 订单创建时间
 	 **/
-	public $createTime;
+	public $create_time;
 	
 	/** 
 	 * 商品成交数量
 	 **/
-	public $itemNum;
+	public $item_num;
 	
 	/** 
 	 * 商品标题
 	 **/
-	public $itemTitle;
+	public $item_title;
 	
 	/** 
 	 * 商品ID
 	 **/
-	public $numIid;
+	public $num_iid;
 	
 	/** 
 	 * 推广渠道
 	 **/
-	public $outerCode;
+	public $outer_code;
 	
 	/** 
 	 * 成交价格
 	 **/
-	public $payPrice;
+	public $pay_price;
 	
 	/** 
 	 * 成交时间
 	 **/
-	public $payTime;
+	public $pay_time;
 	
 	/** 
 	 * 实际支付金额
 	 **/
-	public $realPayFee;
+	public $real_pay_fee;
 	
 	/** 
 	 * 卖家昵称
 	 **/
-	public $sellerNick;
+	public $seller_nick;
 	
 	/** 
 	 * 店铺名称
 	 **/
-	public $shopTitle;
+	public $shop_title;
 	
 	/** 
 	 * 淘宝交易号
 	 **/
-	public $tradeId;
+	public $trade_id;
 	
 	/** 
 	 * 淘宝父交易号
 	 **/
-	public $tradeParentId;	
+	public $trade_parent_id;	
 }
 ?>

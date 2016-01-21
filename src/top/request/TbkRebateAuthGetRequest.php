@@ -3,7 +3,7 @@
  * TOP API: taobao.tbk.rebate.auth.get request
  * 
  * @author auto create
- * @since 1.0, 2015.03.26
+ * @since 1.0, 2016.01.13
  */
 class TbkRebateAuthGetRequest
 {

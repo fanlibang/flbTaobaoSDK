@@ -20,7 +20,7 @@ class TopClient
 
 	protected $apiVersion = "2.0";
 
-	protected $sdkVersion = "top-sdk-php-20150308";
+	protected $sdkVersion = "top-sdk-php-20151012";
 
 	public function __construct($appkey = "",$secretKey = ""){
 		$this->appkey = $appkey;
@@ -57,6 +57,7 @@ class TopClient
 		if ($this->connectTimeout) {
 			curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, $this->connectTimeout);
 		}
+		curl_setopt ( $ch, CURLOPT_USERAGENT, "top-sdk-php" );
 		//https 请求
 		if(strlen($url) > 5 && strtolower(substr($url,0,5)) == "https" ) {
 			curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
@@ -76,12 +77,22 @@ class TopClient
 				else//文件上传用multipart/form-data，否则用www-form-urlencoded
 				{
 					$postMultipart = true;
+					if(class_exists('\CURLFile')){
+						$postFields[$k] = new \CURLFile(substr($v, 1));
+					}
 				}
 			}
 			unset($k, $v);
 			curl_setopt($ch, CURLOPT_POST, true);
 			if ($postMultipart)
 			{
+				if (class_exists('\CURLFile')) {
+				    curl_setopt($ch, CURLOPT_SAFE_UPLOAD, true);
+				} else {
+				    if (defined('CURLOPT_SAFE_UPLOAD')) {
+				        curl_setopt($ch, CURLOPT_SAFE_UPLOAD, false);
+				    }
+				}
 				curl_setopt($ch, CURLOPT_POSTFIELDS, $postFields);
 			}
 			else
@@ -194,7 +205,7 @@ class TopClient
 		$respWellFormed = false;
 		if ("json" == $this->format)
 		{
-			$respObject = json_decode($resp, true);
+			$respObject = json_decode($resp);
 			if (null !== $respObject)
 			{
 				$respWellFormed = true;

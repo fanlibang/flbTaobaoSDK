@@ -36,8 +36,11 @@ class ApplicationVar
  	function __writeToFile()
  	{
   		$fp = @fopen($this->save_file,"w");
-  		@fwrite($fp,$this->app_data);
-  		@fclose($fp);
+      if(flock($fp , LOCK_EX | LOCK_NB)){
+          @fwrite($fp,$this->app_data);
+          flock($fp , LOCK_UN);
+      }
+      @fclose($fp);
  	}
 }
 

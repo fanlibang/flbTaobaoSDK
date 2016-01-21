@@ -10,31 +10,31 @@ class TbkShop
 	/** 
 	 * 店铺推广URL
 	 **/
-	public $clickUrl;
+	public $click_url;
 	
 	/** 
 	 * 店铺logo
 	 **/
-	public $picUrl;
+	public $pic_url;
 	
 	/** 
 	 * 卖家昵称
 	 **/
-	public $sellerNick;
+	public $seller_nick;
 	
 	/** 
 	 * 店铺名称
 	 **/
-	public $shopTitle;
+	public $shop_title;
 	
 	/** 
 	 * 店铺地址
 	 **/
-	public $shopUrl;
+	public $shop_url;
 	
 	/** 
 	 * 店铺用户id
 	 **/
-	public $userId;	
+	public $user_id;	
 }
 ?>
