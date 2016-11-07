@@ -3,7 +3,7 @@
  * TOP API: taobao.shipping.addresses.get request
  * 
  * @author auto create
- * @since 1.0, 2015.03.21
+ * @since 1.0, 2016.04.19
  */
 class ShippingAddressesGetRequest
 {
@@ -39,6 +39,7 @@ class ShippingAddressesGetRequest
 	{
 		
 		RequestCheckUtil::checkNotNull($this->fields,"fields");
+		RequestCheckUtil::checkMaxListSize($this->fields,20,"fields");
 	}
 	
 	public function putOtherTextParam($key, $value) {

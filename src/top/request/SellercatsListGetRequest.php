@@ -3,7 +3,7 @@
  * TOP API: taobao.sellercats.list.get request
  * 
  * @author auto create
- * @since 1.0, 2015.03.18
+ * @since 1.0, 2016.03.17
  */
 class SellercatsListGetRequest
 {
@@ -54,6 +54,7 @@ class SellercatsListGetRequest
 	public function check()
 	{
 		
+		RequestCheckUtil::checkMaxListSize($this->fields,20,"fields");
 		RequestCheckUtil::checkNotNull($this->nick,"nick");
 	}
 	

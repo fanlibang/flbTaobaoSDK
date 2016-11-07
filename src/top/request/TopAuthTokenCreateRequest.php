@@ -3,7 +3,7 @@
  * TOP API: taobao.top.auth.token.create request
  * 
  * @author auto create
- * @since 1.0, 2015.08.20
+ * @since 1.0, 2016.04.15
  */
 class TopAuthTokenCreateRequest
 {
@@ -11,6 +11,11 @@ class TopAuthTokenCreateRequest
 	 * 授权code，grantType==authorization_code 时需要
 	 **/
 	private $code;
+	
+	/** 
+	 * 与生成code的uuid配对
+	 **/
+	private $uuid;
 	
 	private $apiParas = array();
 	
@@ -23,6 +28,17 @@ class TopAuthTokenCreateRequest
 	public function getCode()
 	{
 		return $this->code;
+	}
+
+	public function setUuid($uuid)
+	{
+		$this->uuid = $uuid;
+		$this->apiParas["uuid"] = $uuid;
+	}
+
+	public function getUuid()
+	{
+		return $this->uuid;
 	}
 
 	public function getApiMethodName()

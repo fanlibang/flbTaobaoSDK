@@ -3,7 +3,7 @@
  * TOP API: taobao.open.sms.sendmsg request
  * 
  * @author auto create
- * @since 1.0, 2015.12.25
+ * @since 1.0, 2016.08.29
  */
 class OpenSmsSendmsgRequest
 {

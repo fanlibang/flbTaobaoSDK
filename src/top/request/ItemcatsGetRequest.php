@@ -3,7 +3,7 @@
  * TOP API: taobao.itemcats.get request
  * 
  * @author auto create
- * @since 1.0, 2015.05.21
+ * @since 1.0, 2016.04.05
  */
 class ItemcatsGetRequest
 {

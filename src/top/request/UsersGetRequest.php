@@ -3,7 +3,7 @@
  * TOP API: taobao.users.get request
  * 
  * @author auto create
- * @since 1.0, 2015.07.17
+ * @since 1.0, 2016.04.18
  */
 class UsersGetRequest
 {
@@ -55,6 +55,7 @@ class UsersGetRequest
 	{
 		
 		RequestCheckUtil::checkNotNull($this->fields,"fields");
+		RequestCheckUtil::checkMaxListSize($this->fields,20,"fields");
 		RequestCheckUtil::checkNotNull($this->nicks,"nicks");
 	}
 	

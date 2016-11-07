@@ -3,7 +3,7 @@
  * TOP API: taobao.user.get request
  * 
  * @author auto create
- * @since 1.0, 2015.12.07
+ * @since 1.0, 2016.04.20
  */
 class UserGetRequest
 {

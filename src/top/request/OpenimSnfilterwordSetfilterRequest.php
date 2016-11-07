@@ -3,12 +3,12 @@
  * TOP API: taobao.openim.snfilterword.setfilter request
  * 
  * @author auto create
- * @since 1.0, 2016.03.14
+ * @since 1.0, 2016.04.19
  */
 class OpenimSnfilterwordSetfilterRequest
 {
 	/** 
-	 * 上传者身份
+	 * 上传者身份信息，区分不同上传者;只是记录，没有身份校验功能
 	 **/
 	private $creator;
 	

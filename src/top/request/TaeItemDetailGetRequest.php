@@ -3,7 +3,7 @@
  * TOP API: taobao.tae.item.detail.get request
  * 
  * @author auto create
- * @since 1.0, 2015.08.04
+ * @since 1.0, 2016.08.03
  */
 class TaeItemDetailGetRequest
 {

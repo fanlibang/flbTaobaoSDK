@@ -3,7 +3,7 @@
  * TOP API: alibaba.orp.recommend request
  * 
  * @author auto create
- * @since 1.0, 2016.03.15
+ * @since 1.0, 2016.04.25
  */
 class AlibabaOrpRecommendRequest
 {

@@ -3,7 +3,7 @@
  * TOP API: taobao.item.update request
  * 
  * @author auto create
- * @since 1.0, 2015.11.23
+ * @since 1.0, 2016.09.13
  */
 class ItemUpdateRequest
 {
@@ -56,6 +56,11 @@ class ItemUpdateRequest
 	 * 货到付款运费模板ID该字段已经废弃，货到付款模板已经集成到运费模板中。
 	 **/
 	private $codPostageId;
+	
+	/** 
+	 * 针对当前商品的标准属性值的补充说明，让买家更加了解商品信息减少交易纠纷
+	 **/
+	private $cpvMemo;
 	
 	/** 
 	 * 商品级别设置的发货时间。设置了商品级别的发货时间，相对发货时间，则填写相对发货时间的天数（大于3）；绝对发货时间，则填写yyyy-mm-dd格式，如2013-11-11
@@ -236,6 +241,11 @@ class ItemUpdateRequest
 	 * 加价(降价)幅度。如果为0，代表系统代理幅度。对于增价拍和荷兰拍来说是加价幅度，对于降价拍来说是降价幅度。
 	 **/
 	private $increment;
+	
+	/** 
+	 * 针对当前商品的自定义属性值
+	 **/
+	private $inputCustomCpv;
 	
 	/** 
 	 * 用户自行输入的类目属性ID串，结构："pid1,pid2,pid3"，如："20000"（表示品牌） 注：通常一个类目下用户可输入的关键属性不超过1个。
@@ -709,6 +719,17 @@ class ItemUpdateRequest
 		return $this->codPostageId;
 	}
 
+	public function setCpvMemo($cpvMemo)
+	{
+		$this->cpvMemo = $cpvMemo;
+		$this->apiParas["cpv_memo"] = $cpvMemo;
+	}
+
+	public function getCpvMemo()
+	{
+		return $this->cpvMemo;
+	}
+
 	public function setDeliveryTimeDeliveryTime($deliveryTimeDeliveryTime)
 	{
 		$this->deliveryTimeDeliveryTime = $deliveryTimeDeliveryTime;
@@ -1103,6 +1124,17 @@ class ItemUpdateRequest
 	public function getIncrement()
 	{
 		return $this->increment;
+	}
+
+	public function setInputCustomCpv($inputCustomCpv)
+	{
+		$this->inputCustomCpv = $inputCustomCpv;
+		$this->apiParas["input_custom_cpv"] = $inputCustomCpv;
+	}
+
+	public function getInputCustomCpv()
+	{
+		return $this->inputCustomCpv;
 	}
 
 	public function setInputPids($inputPids)
@@ -1928,7 +1960,6 @@ class ItemUpdateRequest
 		RequestCheckUtil::checkMinValue($this->paimaiInfoValidMinute,0,"paimaiInfoValidMinute");
 		RequestCheckUtil::checkMaxLength($this->propertyAlias,800,"propertyAlias");
 		RequestCheckUtil::checkMaxLength($this->sellPoint,150,"sellPoint");
-		RequestCheckUtil::checkMaxListSize($this->sellerCids,10,"sellerCids");
 		RequestCheckUtil::checkMaxLength($this->title,120,"title");
 	}
 	

@@ -3,7 +3,7 @@
  * TOP API: taobao.tmc.messages.produce request
  * 
  * @author auto create
- * @since 1.0, 2016.01.29
+ * @since 1.0, 2016.09.28
  */
 class TmcMessagesProduceRequest
 {

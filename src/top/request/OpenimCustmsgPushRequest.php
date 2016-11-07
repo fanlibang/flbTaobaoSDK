@@ -3,7 +3,7 @@
  * TOP API: taobao.openim.custmsg.push request
  * 
  * @author auto create
- * @since 1.0, 2016.01.28
+ * @since 1.0, 2016.04.11
  */
 class OpenimCustmsgPushRequest
 {

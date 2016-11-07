@@ -3,7 +3,7 @@
  * TOP API: taobao.tmc.message.produce request
  * 
  * @author auto create
- * @since 1.0, 2015.12.17
+ * @since 1.0, 2016.09.27
  */
 class TmcMessageProduceRequest
 {
@@ -46,6 +46,11 @@ class TmcMessageProduceRequest
 	 * 直发消息需要传入目标appkey
 	 **/
 	private $targetAppkey;
+	
+	/** 
+	 * 目标分组，一般为default
+	 **/
+	private $targetGroup;
 	
 	/** 
 	 * 消息类型
@@ -140,6 +145,17 @@ class TmcMessageProduceRequest
 	public function getTargetAppkey()
 	{
 		return $this->targetAppkey;
+	}
+
+	public function setTargetGroup($targetGroup)
+	{
+		$this->targetGroup = $targetGroup;
+		$this->apiParas["target_group"] = $targetGroup;
+	}
+
+	public function getTargetGroup()
+	{
+		return $this->targetGroup;
 	}
 
 	public function setTopic($topic)
