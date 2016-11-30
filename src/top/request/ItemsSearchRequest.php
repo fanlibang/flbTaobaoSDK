@@ -3,7 +3,7 @@
  * TOP API: taobao.items.search request
  * 
  * @author auto create
- * @since 1.0, 2015.01.08
+ * @since 1.0, 2016.10.17
  */
 class ItemsSearchRequest
 {

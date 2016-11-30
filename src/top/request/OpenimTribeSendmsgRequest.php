@@ -3,7 +3,7 @@
  * TOP API: taobao.openim.tribe.sendmsg request
  * 
  * @author auto create
- * @since 1.0, 2016.07.06
+ * @since 1.0, 2016.11.05
  */
 class OpenimTribeSendmsgRequest
 {

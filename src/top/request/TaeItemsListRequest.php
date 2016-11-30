@@ -3,7 +3,7 @@
  * TOP API: taobao.tae.items.list request
  * 
  * @author auto create
- * @since 1.0, 2015.07.20
+ * @since 1.0, 2016.11.09
  */
 class TaeItemsListRequest
 {
@@ -71,6 +71,7 @@ class TaeItemsListRequest
 	{
 		
 		RequestCheckUtil::checkNotNull($this->fields,"fields");
+		RequestCheckUtil::checkMaxLength($this->openIids,3000,"openIids");
 	}
 	
 	public function putOtherTextParam($key, $value) {

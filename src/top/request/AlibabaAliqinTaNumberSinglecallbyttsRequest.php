@@ -3,7 +3,7 @@
  * TOP API: alibaba.aliqin.ta.number.singlecallbytts request
  * 
  * @author auto create
- * @since 1.0, 2016.06.02
+ * @since 1.0, 2016.10.27
  */
 class AlibabaAliqinTaNumberSinglecallbyttsRequest
 {

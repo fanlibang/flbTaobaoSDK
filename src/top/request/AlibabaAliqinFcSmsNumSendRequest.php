@@ -3,7 +3,7 @@
  * TOP API: alibaba.aliqin.fc.sms.num.send request
  * 
  * @author auto create
- * @since 1.0, 2016.07.20
+ * @since 1.0, 2016.11.10
  */
 class AlibabaAliqinFcSmsNumSendRequest
 {

@@ -3,7 +3,7 @@
  * TOP API: taobao.open.account.token.validate request
  * 
  * @author auto create
- * @since 1.0, 2015.10.15
+ * @since 1.0, 2016.11.18
  */
 class OpenAccountTokenValidateRequest
 {

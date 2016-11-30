@@ -3,7 +3,7 @@
  * TOP API: taobao.atb.items.detail.get request
  * 
  * @author auto create
- * @since 1.0, 2014.10.11
+ * @since 1.0, 2016.11.09
  */
 class AtbItemsDetailGetRequest
 {
@@ -57,6 +57,7 @@ class AtbItemsDetailGetRequest
 		RequestCheckUtil::checkNotNull($this->fields,"fields");
 		RequestCheckUtil::checkMaxListSize($this->fields,200,"fields");
 		RequestCheckUtil::checkNotNull($this->openIids,"openIids");
+		RequestCheckUtil::checkMaxLength($this->openIids,3000,"openIids");
 	}
 	
 	public function putOtherTextParam($key, $value) {
